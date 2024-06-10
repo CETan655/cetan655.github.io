@@ -1,0 +1,17 @@
+{
+    "name": "els_ota_app_update",
+    "authors": {
+        "name": "mfkhoo"
+    },
+    "version": "1.0.0",
+    "platforms": [
+        "platformio"
+    ],
+    "frameworks": "*",
+    "build": {
+        "flags": [
+            "-L.",
+            "-lels_ota_app_update"
+        ]
+    }
+}

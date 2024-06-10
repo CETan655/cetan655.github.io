@@ -1,0 +1,20 @@
+Include els_ota_app_update library folder into lib directory.
+ - els_ota_app_update.h
+ - libels_ota_app_update.a
+ - library.json
+
+Update platformio.ini file.
+ - monitor_speed = 115200
+ - monitor_raw = yes
+ - board_build.partitions = partitions_two_ota.csv
+ - build_flags =
+       -D CONFIG_MBEDTLS_PSK_MODES=1
+       -D CONFIG_MBEDTLS_KEY_EXCHANGE_PSK=1
+       -D CONFIG_ESP_TLS_INSECURE=1
+       -D CONFIG_ESP_TLS_SKIP_SERVER_CERT_VERIFY=1
+       -D CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP=1
+       -D CONFIG_PARTITION_TABLE_TWO_OTA=1
+       -D CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=1
+ 
+Update CMakeLists.txt file.
+ - set(PROJECT_VER "0.1")
